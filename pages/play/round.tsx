@@ -14,6 +14,7 @@ const Round: NextPage = () => {
   return <div className={styles.rounds}>
     <h2 className={styles.stay}>{leftRounds} tours restants</h2>
     <h1 className={styles.weight}>{targetWeight}g</h1>
+    <button className={styles.finished}>Fini !</button>
   </div>
 }
 
