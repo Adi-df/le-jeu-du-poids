@@ -9,11 +9,14 @@ type GameState = {
   setTargetWeight: (target: number) => void,
   setLeftRounds: (rounds: number) => void,
   setPlayers: (players: GamePlayer[]) => void,
+  getPlayer: (id: number) => GamePlayer | undefined,
+  setPlayer: (id: number, player: GamePlayer) => void,
+  removePlayer: (id: number) => void,
   addPlayer: (id: number, name: string) => void,
   decrementRounds: () => void
 };
 
-const useStore = create<GameState>(set => ({
+const useStore = create<GameState>((set, get) => ({
   targetWeight: null,
   players: [],
   leftRounds: 1,
@@ -29,6 +32,9 @@ const useStore = create<GameState>(set => ({
       points: 0
     }]
   })),
+  removePlayer: (id: number) => set(({ players }) => ({ players: players.filter(({ id: pid }) => id !== pid) })),
+  getPlayer: (id: number) => get().players.find(({ id: pid }) => pid == id),
+  setPlayer: (id: number, player: GamePlayer) => set(({ players }) => ({ players: players.map((p) => id === p.id ? player : p) })),
   decrementRounds: () => set(({ leftRounds }) => ({ leftRounds: leftRounds - 1 }))
 }));
 
