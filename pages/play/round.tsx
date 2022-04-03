@@ -1,4 +1,5 @@
 import type { NextPage } from "next"
+import Link from "next/link";
 import { useEffect } from "react"
 import { useStore } from "../../store/store"
 import styles from "../../styles/Round.module.css"
@@ -14,8 +15,8 @@ const Round: NextPage = () => {
   return <div className={styles.rounds}>
     <h2 className={styles.stay}>{leftRounds} tours restants</h2>
     <h1 className={styles.weight}>{targetWeight}g</h1>
-    <button className={styles.finished}>Fini !</button>
-  </div>
+    <Link href="/play/weights"><button className={styles.finished}>Fini !</button></Link>
+  </div >
 }
 
 export default Round
