@@ -11,6 +11,7 @@ type GameState = {
   setPlayers: (players: GamePlayer[]) => void,
   getPlayer: (id: number) => GamePlayer | undefined,
   setPlayer: (id: number, player: GamePlayer) => void,
+  setPlayerName: (id: number, name: string) => void,
   removePlayer: (id: number) => void,
   addPlayer: (id: number, name: string) => void,
   decrementRounds: () => void
@@ -35,6 +36,7 @@ const useStore = create<GameState>((set, get) => ({
   removePlayer: (id: number) => set(({ players }) => ({ players: players.filter(({ id: pid }) => id !== pid) })),
   getPlayer: (id: number) => get().players.find(({ id: pid }) => pid == id),
   setPlayer: (id: number, player: GamePlayer) => set(({ players }) => ({ players: players.map((p) => id === p.id ? player : p) })),
+  setPlayerName: (id: number, name: string) => set(({ players }) => ({ players: players.map((p) => ({ name: id === p.id ? name : p.name, id: p.id, points: p.points })) })),
   decrementRounds: () => set(({ leftRounds }) => ({ leftRounds: leftRounds - 1 }))
 }));
 
