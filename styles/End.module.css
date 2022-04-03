@@ -35,11 +35,21 @@
 }
 .end .player .name {
   border: #0c90f4 2px solid;
-  border-top-right-radius: 10px;
-  border-bottom-right-radius: 10px;
 
   padding: 0 6px;
 
   min-width: max-content;
   width: 60%;
+}
+.end .player .points {
+  border: #0c90f4 2px solid;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+
+  padding: 0 6px;
+
+  background-color: #0c90f4;
+  color: white;
+
+  min-width: max-content;
 }
