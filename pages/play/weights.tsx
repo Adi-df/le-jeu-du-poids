@@ -10,7 +10,7 @@ const Round: NextPage = () => {
 
   return <div className={styles.weights}>
     <div className={styles.list}>
-      {players.map(({ id }) => <PlayerWeightInput id={id} />)}
+      {players.map(({ id }, i) => <PlayerWeightInput id={id} key={i} />)}
     </div>
     <button className={styles.results} onClick={() => {
       decrementRounds();
