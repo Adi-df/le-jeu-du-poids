@@ -12,7 +12,8 @@ const Play: NextPage = () => {
       <h1>Jouer !</h1>
     </div>
     <div className={styles.form}>
-      {players.map(({ name }, i) => <PlayerInput name={name} key={i} />)}
+      <div>{players.map(({ name }, i) => <PlayerInput name={name} key={i} />)}</div>
+      <button onClick={() => setPlayer(players => [...players, { name: "Nouveau joueur" }])}>Nouveau joueur !</button>
     </div>
   </main>
 }
