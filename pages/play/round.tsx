@@ -28,7 +28,7 @@ const Round: NextPage = () => {
     <div className={styles.rounds}>
       <h2 className={styles.stay}>{leftRounds} tours restants</h2>
       <h1 className={styles.weight}>{targetWeight}g</h1>
-      <h2>C'est parti !</h2>
+      <h2>{"C'est parti !"}</h2>
       <Link href="/play/weights" passHref>
         <button className={styles.finished}>Entrer les poids</button>
       </Link>
