@@ -1,0 +1,34 @@
+.rounds {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+  height: 100vh;
+
+  background-color: #0c90f4;
+  color: white;
+}
+.rounds .stay {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+
+  margin: 0;
+}
+.rounds .weight {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border: white 5px solid;
+  border-radius: 50%;
+  background-color: #0c90f4;
+  color: white;
+
+  width: 30vmin;
+  height: 30vmin;
+
+  background-color: #0c90f4;
+  color: white;
+}
