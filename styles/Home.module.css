@@ -5,3 +5,12 @@
   color: white;
   background-color: #0c90f4;
 }
+
+.play {
+  display: flex;
+  justify-content: center;
+
+  width: 100%;
+
+  margin-top: 2rem;
+}
