@@ -1,0 +1,19 @@
+.weights {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+  height: 100vh;
+}
+
+.weights .list {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.weights .list div {
+  margin-bottom: 10px;
+  width: 100%;
+}
