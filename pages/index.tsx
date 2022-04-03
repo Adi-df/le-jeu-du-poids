@@ -15,6 +15,8 @@ const Home: NextPage = () => {
         <div className={styles.title}>
           <h1>Le Jeu du Poids</h1>
         </div>
+        <section className={styles.play}>
+        </section>
       </main>
     </div>
   )
