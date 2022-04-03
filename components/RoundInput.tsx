@@ -1,10 +1,12 @@
-import { FC } from "react"
+import { useStore } from "../store/store";
 import styles from "../styles/RoundInput.module.css"
 
-const RoundInput: FC = () => {
+const RoundInput = () => {
+  const { leftRounds, setLeftRounds } = useStore(({ leftRounds, setLeftRounds }) => ({ leftRounds, setLeftRounds }));
+
   return <div className={styles.round}>
     <label className={styles.label}>Nombre de tour : </label>
-    <input className={styles.input} type={"number"} min={1} defaultValue={1} />
+    <input className={styles.input} type={"number"} min={1} value={leftRounds} onChange={(e) => setLeftRounds(parseInt(e.target.value))} />
   </div>
 }
 
