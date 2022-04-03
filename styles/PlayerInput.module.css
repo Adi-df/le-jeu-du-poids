@@ -29,7 +29,8 @@
   height: 33px;
   width: 30px;
 }
-.input .delete .cross::before, .input .delete .cross::after {
+.input .delete .cross::before,
+.input .delete .cross::after {
   display: block;
   position: absolute;
   right: 50%;
