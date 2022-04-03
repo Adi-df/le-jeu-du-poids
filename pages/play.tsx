@@ -2,6 +2,7 @@ import type { NextPage } from "next"
 import { useRouter } from "next/router"
 import { useState } from "react"
 import PlayerInput from "../components/PlayerInput"
+import RoundInput from "../components/RoundInput"
 import { useStore, GamePlayer } from "../store/store"
 import homeStyles from "../styles/Home.module.css"
 import styles from "../styles/Play.module.css"
@@ -25,6 +26,7 @@ const Play: NextPage = () => {
       </div>
       <div className={styles.buttons}>
         <button className={styles.new_player} onClick={() => setPlayers(players => [...players, { id: players.length, name: "Nouveau joueur", points: 0 }])}>Nouveau joueur !</button>
+        <RoundInput />
         <button className={styles.start} onClick={() => {
           setStorePlayers(players);
           router.push("/play/start")
