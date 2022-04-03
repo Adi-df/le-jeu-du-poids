@@ -1,5 +1,6 @@
 .input {
   display: flex;
+  margin: 10px 0;
 }
 .input .name {
   padding: 0.4rem;
