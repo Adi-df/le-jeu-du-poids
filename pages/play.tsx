@@ -25,7 +25,7 @@ const Play: NextPage = () => {
         <RoundInput />
         <button className={styles.start} onClick={() => {
           if (players.length < 2) return;
-          router.push("/play/start")
+          router.push("/play/round")
         }}>Démarer !</button>
       </div>
     </div>
