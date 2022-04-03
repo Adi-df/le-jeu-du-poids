@@ -21,14 +21,14 @@ const Round: NextPage = () => {
       setTargetWeight(
         Math.floor(Math.random() * (MAX_WEIGHT - MIN_WEIGHT) + MIN_WEIGHT)
       ),
-    []
+    [setTargetWeight]
   );
 
   return (
     <div className={styles.rounds}>
       <h2 className={styles.stay}>{leftRounds} tours restants</h2>
       <h1 className={styles.weight}>{targetWeight}g</h1>
-      <Link href="/play/weights">
+      <Link href="/play/weights" passHref>
         <button className={styles.finished}>Fini !</button>
       </Link>
     </div>

@@ -28,7 +28,7 @@ const Round: NextPage = () => {
     <div className={styles.order}>
       <div className={styles.players}>
         {sortedPlayers.map((player, i) => (
-          <div className={styles.player}>
+          <div className={styles.player} key={i}>
             <div className={styles.place}>{i + 1}</div>
             <div className={styles.name}>{player.name}</div>
             <div className={styles.points}>+{sortedPlayers.length - i}</div>

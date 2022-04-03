@@ -26,7 +26,7 @@ const Round: NextPage = () => {
       <h1 className={styles.title}>Classement</h1>
       <div className={styles.players}>
         {sortedPlayers.map((player, i) => (
-          <div className={styles.player}>
+          <div className={styles.player} key={i}>
             <div className={styles.place}>
               {i == 0 ? (
                 <Image src={goldMedal} alt={"Médaille d'or"} />
