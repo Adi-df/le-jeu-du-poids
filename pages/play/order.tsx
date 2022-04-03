@@ -7,8 +7,8 @@ const Round: NextPage = () => {
 
   const sortedPlayers = players.map(player => ({ dist: Math.abs((targetWeight || 0) - player.weight), player })).sort((p1, p2) => p1.dist - p2.dist).map(({ player }) => player);
 
-  return <div>
-    <div>
+  return <div className={styles.order}>
+    <div className={styles.ordering}>
       {sortedPlayers.map((player, i) => <div>
         <div>{i + 1}</div>
         <div>{player.name}</div>
