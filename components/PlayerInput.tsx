@@ -1,12 +1,13 @@
-import { FC, useState } from "react"
+import { FC } from "react"
+import { useStore } from "../store/store"
 import styles from "../styles/PlayerInput.module.css"
 
-const PlayerInput: FC<{ name: string, onDelete: () => void }> = ({ name, onDelete }) => {
-  const [nameInput, setNameInput] = useState<string>(name);
+const PlayerInput: FC<{ id: number }> = ({ id }) => {
+  const { getPlayer, setPlayerName, removePlayer } = useStore(({ setPlayerName, getPlayer, removePlayer }) => ({ getPlayer, setPlayerName, removePlayer }));
 
   return <div className={styles.input}>
-    <input className={styles.name} type={"text"} autoFocus value={nameInput} onChange={(e) => setNameInput(e.target.value)} />
-    <button className={styles.delete} onClick={() => onDelete()}><span className={styles.cross} /></button>
+    <input className={styles.name} type={"text"} autoFocus value={getPlayer(id)?.name} onChange={(e) => setPlayerName(id, e.target.value)} />
+    <button className={styles.delete} onClick={() => removePlayer(id)}><span className={styles.cross} /></button>
   </div>
 }
 
