@@ -19,7 +19,10 @@ const Play: NextPage = () => {
           } key={id} />
         )}
       </div>
-      <button className={styles.new_player} onClick={() => setPlayer(players => [...players, { id: players.length, name: "Nouveau joueur" }])}>Nouveau joueur !</button>
+      <div className={styles.buttons}>
+        <button className={styles.new_player} onClick={() => setPlayer(players => [...players, { id: players.length, name: "Nouveau joueur" }])}>Nouveau joueur !</button>
+        <button className={styles.start} onClick={() => { }}>Démarer !</button>
+      </div>
     </div>
   </main>
 }
