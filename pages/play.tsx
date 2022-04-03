@@ -39,7 +39,7 @@ const Play: NextPage = () => {
               router.push("/play/round");
             }}
           >
-            Démarer !
+            Démarrer !
           </button>
         </div>
       </div>
