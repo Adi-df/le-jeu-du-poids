@@ -6,7 +6,7 @@ const PlayerInput: FC<{ name: string, onDelete: () => void }> = ({ name, onDelet
 
   return <div className={styles.input}>
     <input className={styles.name} type={"text"} value={nameInput} onChange={(e) => setNameInput(e.target.value)} />
-    <button className={styles.delete} onClick={() => onDelete()}>Delete</button>
+    <button className={styles.delete} onClick={() => onDelete()}><span className={styles.cross} /></button>
   </div>
 }
 

@@ -9,10 +9,40 @@
   border-bottom-left-radius: 10px;
 }
 .input .delete {
+  display: block;
+
   border: 2px solid #0c90f4;
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
 
   background-color: #0c90f4;
   color: white;
+
+  cursor: pointer;
+}
+
+.input .delete .cross {
+  display: block;
+  position: relative;
+
+  height: 33px;
+  width: 30px;
+}
+.input .delete .cross::before, .input .delete .cross::after {
+  display: block;
+  position: absolute;
+  right: 50%;
+
+  content: " ";
+
+  height: 33px;
+  width: 3px;
+
+  background-color: red;
+}
+.input .delete .cross:before {
+  transform: rotate(45deg);
+}
+.input .delete .cross:after {
+  transform: rotate(-45deg);
 }
