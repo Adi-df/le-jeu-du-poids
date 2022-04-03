@@ -5,7 +5,7 @@ import styles from "../../styles/Order.module.css"
 import roundStyles from "../../styles/Round.module.css"
 
 const Round: NextPage = () => {
-  const { players, targetWeight, leftRounds, decrementRounds } = useStore(({ players, targetWeight, leftRounds, decrementRounds }) => ({ players, targetWeight, leftRounds, decrementRounds }))
+  const { players, setPlayers, targetWeight, leftRounds, decrementRounds } = useStore(({ players, setPlayers, targetWeight, leftRounds, decrementRounds }) => ({ players, setPlayers, targetWeight, leftRounds, decrementRounds }))
 
   useEffect(() => decrementRounds(), [])
 
@@ -19,8 +19,15 @@ const Round: NextPage = () => {
         <div className={styles.points}>+{sortedPlayers.length - i}</div>
       </div>)}
     </div>
-    <button className={roundStyles.finished}>{leftRounds > 0 ? "Tour suivant" : "Résultats"}</button>
-  </div>
+    <button onClick={() => {
+      setPlayers(sortedPlayers.map((player, i) => ({
+        id: player.id,
+        name: player.name,
+        points: player.points + sortedPlayers.length - i,
+        weight: 0
+      })));
+    }} className={roundStyles.finished}>{leftRounds > 0 ? "Tour suivant" : "Résultats"}</button>
+  </div >
 }
 
 export default Round
