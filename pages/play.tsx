@@ -5,15 +5,21 @@ import homeStyles from "../styles/Home.module.css"
 import styles from "../styles/Play.module.css"
 
 const Play: NextPage = () => {
-  const [players, setPlayer] = useState<{ name: string }[]>([]);
+  const [players, setPlayer] = useState<{ id: number, name: string }[]>([]);
 
   return <main className={homeStyles.main}>
     <div className={homeStyles.title}>
       <h1>Jouer !</h1>
     </div>
     <div className={styles.form}>
-      <div>{players.map(({ name }, i) => <PlayerInput name={name} key={i} />)}</div>
-      <button onClick={() => setPlayer(players => [...players, { name: "Nouveau joueur" }])}>Nouveau joueur !</button>
+      <div>
+        {players.map(({ name, id }) =>
+          <PlayerInput name={name} onDelete={
+            () => setPlayer(players => players.filter(({ id: nid }) => id !== nid))
+          } key={id} />
+        )}
+      </div>
+      <button onClick={() => setPlayer(players => [...players, { id: players.length, name: "Nouveau joueur" }])}>Nouveau joueur !</button>
     </div>
   </main>
 }
