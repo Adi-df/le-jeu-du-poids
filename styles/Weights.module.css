@@ -1,5 +1,6 @@
 .weights {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 
@@ -12,8 +13,20 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+
+  margin-bottom: 10px;
 }
 .weights .list div {
   margin-bottom: 10px;
   width: 100%;
+}
+
+.weights .results {
+  cursor: pointer;
+  border: #0c90f4 2px solid;
+  border-radius: 10px;
+
+  background-color: white;
+  color: #0c90f4;
+  font-size: 1.5rem;
 }
