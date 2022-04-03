@@ -1,0 +1,16 @@
+.title {
+  width: 100%;
+  padding: 2rem 0;
+  text-align: center;
+  color: white;
+  background-color: #0c90f4;
+}
+
+.play {
+  display: flex;
+  justify-content: center;
+
+  width: 100%;
+
+  margin-top: 2rem;
+}
