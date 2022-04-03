@@ -1,0 +1,59 @@
+.end {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+  height: 100vh;
+}
+.end .title {
+  font-size: 3rem;
+}
+.end .players {
+  margin-bottom: 10px;
+}
+.end .player {
+  display: flex;
+  margin-bottom: 10px;
+
+  min-width: max-content;
+
+  font-size: 1.5rem;
+}
+.end .player .place {
+  border: #0c90f4 2px solid;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+
+  background-color: #0c90f4;
+  color: white;
+
+  min-width: max-content;
+  width: 10%;
+  padding-left: 3px;
+}
+.end .player .place span img {
+  width: 1rem !important; 
+  height: 1rem !important;
+}
+.end .player .name {
+  border: #0c90f4 2px solid;
+
+  padding: 0 6px;
+
+  min-width: max-content;
+  width: 60%;
+}
+.end .player .points {
+  border: #0c90f4 2px solid;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+
+  padding: 0 6px;
+
+  background-color: #0c90f4;
+  color: white;
+
+  min-width: max-content;
+}
