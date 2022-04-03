@@ -1,15 +1,12 @@
 import type { NextPage } from "next"
 import { useRouter } from "next/router"
-import { useEffect } from "react"
 import { useStore } from "../../store/store"
 import styles from "../../styles/Order.module.css"
 import roundStyles from "../../styles/Round.module.css"
 
 const Round: NextPage = () => {
-  const { players, setPlayers, targetWeight, leftRounds, decrementRounds } = useStore(({ players, setPlayers, targetWeight, leftRounds, decrementRounds }) => ({ players, setPlayers, targetWeight, leftRounds, decrementRounds }))
+  const { players, setPlayers, targetWeight, leftRounds } = useStore(({ players, setPlayers, targetWeight, leftRounds, decrementRounds }) => ({ players, setPlayers, targetWeight, leftRounds, decrementRounds }))
   const router = useRouter();
-
-  useEffect(() => decrementRounds(), [])
 
   const sortedPlayers = players.map(player => ({ dist: Math.abs((targetWeight || 0) - player.weight), player })).sort((p1, p2) => p1.dist - p2.dist).map(({ player }) => player);
 
