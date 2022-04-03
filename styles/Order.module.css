@@ -1,0 +1,52 @@
+.order {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+  height: 100vh;
+
+  background-color: #0c90f4;
+  color: white;
+  font-size: 1.5rem;
+}
+
+.order .players {
+  margin-bottom: 10px;
+}
+.order .player {
+  display: flex;
+  margin-bottom: 10px;
+
+  min-width: max-content;
+}
+.order .player .place {
+  border: white 2px solid;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+
+  background-color: white;
+  color: #0c90f4;
+
+  min-width: max-content;
+  width: 10%;
+}
+.order .player .name {
+  padding: 0 6px;
+  border: white 2px solid;
+
+  min-width: max-content;
+  width: 60%;
+}
+.order .player .points {
+  border: white 2px solid;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+
+  background-color: white;
+  color: #0c90f4;
+
+  min-width: max-content;
+  width: 30%;
+}
