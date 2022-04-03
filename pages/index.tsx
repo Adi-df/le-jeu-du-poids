@@ -12,6 +12,9 @@ const Home: NextPage = () => {
       </Head>
 
       <main className={styles.main}>
+        <div className={styles.title}>
+          <h1>Le Jeu du Poids</h1>
+        </div>
       </main>
     </div>
   )
