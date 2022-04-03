@@ -33,6 +33,10 @@
   width: 10%;
   padding-left: 3px;
 }
+.end .player .place span img {
+  width: 1rem !important; 
+  height: 1rem !important;
+}
 .end .player .name {
   border: #0c90f4 2px solid;
 

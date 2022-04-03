@@ -1,8 +1,13 @@
 import type { NextPage } from "next"
+import Image from "next/image"
 import { useRouter } from "next/router"
 import { useStore } from "../../store/store"
 import styles from "../../styles/End.module.css"
 import roundStyles from "../../styles/Round.module.css"
+
+import goldMedal from "../../public/medals/gold.svg"
+import silvelMedal from "../../public/medals/silver.svg"
+import bronzeMedal from "../../public/medals/bronze.svg"
 
 const Round: NextPage = () => {
   const { players, setPlayers, setLeftRounds } = useStore(({ players, setPlayers, setLeftRounds }) => ({ players, setPlayers, setLeftRounds }))
@@ -14,7 +19,7 @@ const Round: NextPage = () => {
     <h1 className={styles.title}>Classement</h1>
     <div className={styles.players}>
       {sortedPlayers.map((player, i) => <div className={styles.player}>
-        <div className={styles.place}>{i + 1}</div>
+        <div className={styles.place}>{i == 0 ? <Image src={goldMedal} alt={"Médaille d'or"} /> : i == 1 ? <Image src={silvelMedal} alt={"Médaille d'argent"} /> : i == 2 ? <Image src={bronzeMedal} alt={"Médaille de bronze"} /> : i + 1}</div>
         <div className={styles.name}>{player.name}</div>
         <div className={styles.points}>{player.points}</div>
       </div>)}
