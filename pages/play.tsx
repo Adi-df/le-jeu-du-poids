@@ -1,11 +1,15 @@
 import type { NextPage } from "next"
+import { useRouter } from "next/router"
 import { useState } from "react"
 import PlayerInput from "../components/PlayerInput"
+import { useStore, GamePlayer } from "../store/store"
 import homeStyles from "../styles/Home.module.css"
 import styles from "../styles/Play.module.css"
 
 const Play: NextPage = () => {
-  const [players, setPlayer] = useState<{ id: number, name: string }[]>([]);
+  const { setPlayers: setStorePlayers } = useStore(({ setPlayers }) => ({ setPlayers }));
+  const [players, setPlayers] = useState<GamePlayer[]>([]);
+  const router = useRouter();
 
   return <main className={homeStyles.main}>
     <div className={homeStyles.title}>
@@ -15,13 +19,16 @@ const Play: NextPage = () => {
       <div>
         {players.map(({ name, id }) =>
           <PlayerInput name={name} onDelete={
-            () => setPlayer(players => players.filter(({ id: nid }) => id !== nid))
+            () => setPlayers(players => players.filter(({ id: nid }) => id !== nid))
           } key={id} />
         )}
       </div>
       <div className={styles.buttons}>
-        <button className={styles.new_player} onClick={() => setPlayer(players => [...players, { id: players.length, name: "Nouveau joueur" }])}>Nouveau joueur !</button>
-        <button className={styles.start} onClick={() => { }}>Démarer !</button>
+        <button className={styles.new_player} onClick={() => setPlayers(players => [...players, { id: players.length, name: "Nouveau joueur", points: 0 }])}>Nouveau joueur !</button>
+        <button className={styles.start} onClick={() => {
+          setStorePlayers(players);
+          router.push("/play/start")
+        }}>Démarer !</button>
       </div>
     </div>
   </main>
