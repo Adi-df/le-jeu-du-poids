@@ -54,7 +54,7 @@ const Round: NextPage = () => {
         }}
         className={roundStyles.finished}
       >
-        {leftRounds > 0 ? "Tour suivant" : "Résultats"}
+        {leftRounds > 0 ? "Tour suivant" : "Classement"}
       </button>
     </div>
   );
