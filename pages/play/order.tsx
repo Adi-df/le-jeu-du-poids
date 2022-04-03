@@ -12,6 +12,7 @@ const Round: NextPage = () => {
       {sortedPlayers.map((player, i) => <div>
         <div>{i + 1}</div>
         <div>{player.name}</div>
+        <div>+{sortedPlayers.length - i}</div>
       </div>)}
     </div>
   </div>
