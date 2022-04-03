@@ -11,6 +11,7 @@ const Round: NextPage = () => {
   const sortedPlayers = players.sort((p1, p2) => p1.points - p2.points);
 
   return <div className={styles.end}>
+    <h1 className={styles.title}>Classement</h1>
     <div className={styles.players}>
       {sortedPlayers.map((player, i) => <div className={styles.player}>
         <div className={styles.place}>{i + 1}</div>
