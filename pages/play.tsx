@@ -8,10 +8,6 @@ const Play: NextPage = () => {
       <h1>Jouer !</h1>
     </div>
     <div className={styles.form}>
-      <div className={styles.count_input}>
-        <label>Nombre de joueurs : </label>
-        <input type={"number"} min={2} />
-      </div>
     </div>
   </main>
 }
