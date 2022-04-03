@@ -1,4 +1,4 @@
-import create from "zustand/react";
+import create from "zustand";
 
 type GamePlayer = { id: number, name: string, points: number };
 type GameState = {
@@ -26,4 +26,5 @@ const useStore = create<GameState>(set => ({
   }))
 }));
 
-export default useStore;
+export type { GamePlayer }
+export { useStore };
