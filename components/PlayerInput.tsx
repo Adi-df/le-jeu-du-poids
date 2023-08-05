@@ -18,6 +18,7 @@ const PlayerInput: FC<{ id: number }> = ({ id }) => {
         type={"text"}
         autoFocus
         value={getPlayer(id)?.name}
+        placeholder={"Nouveau joueur"}
         onChange={(e) => setPlayerName(id, e.target.value)}
       />
       <button className={styles.delete} onClick={() => removePlayer(id)}>

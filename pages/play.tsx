@@ -27,7 +27,7 @@ const Play: NextPage = () => {
         <div className={styles.buttons}>
           <button
             className={styles.new_player}
-            onClick={() => addPlayer(players.length, "Nouveau joueur")}
+            onClick={() => addPlayer(players.length, "")}
           >
             Nouveau joueur !
           </button>
